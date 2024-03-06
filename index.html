@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Reserva de habitacion</h1>
+        <section>
+        <form action="" autocomplete="off">
+            <fieldset class="informacionP">
+                <legend>Datos personales</legend>
+                <div>
+                    <label for="name">Nombre*:</label>
+                    <input type="text" id="name" name="name">
+                    <p id="issue"></p>
+                </div>
+                <div>
+                    <label for="lastN">Apellido(s)*</label>
+                    <input type="text" id="lastN" name="lastN">
+                    <p id="issue"></p>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de la reserva</legend>
+                <div class="age">
+                    <div>
+                        <label for="Adultos">Adultos</label>
+                        <input type="text" name="Adultos" id="Adultos" value="1">
+                    </div>
+                    <div>
+                        <label for="Niños">Niños</label>
+                        <input type="text" name="Niños" id="Niños" value="0">
+                    </div>
+                </div>  
+                <p id="issueCantidad"></p>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Regimen de comidas</legend>
+                <div>
+                  <input type="radio" name="comidas" id="desayuno" value="Solo desayuno"checked>
+                  <label for="desayuno">Solo desayunos</label>
+                </div>
+                <div>
+                  <input type="radio" name="comidas" id="mediaPe" value="Media pension">
+                  <label for="mediaPe">Media pension</label>
+                </div>
+                <div>
+                  <input type="radio" name="comidas" id="CompletePe" value="Pension completa">
+                  <label for="CompletePe">Pension completa</label>
+                </div>
+            </fieldset>
+
+            <div class="botones">
+                <button type="button" onclick="reservar()">Reservar</button>
+                <button type="reset" onclick="reset()">Borrar Campos</button>
+              </div>
+        </form>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

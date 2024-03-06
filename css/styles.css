@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 500px;
+    margin: 0 auto;
+    
+}
+fieldset{
+    padding: 25px;
+    margin: 15px 0;
+}
+
+.informacionP div{
+    display: flex;
+    flex-direction: column;
+}
+
+.age{
+    display: flex;
+    gap: 1em;
+    width: 2rem;
+}
+.age input{
+    width: 3rem;
+}
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.botones button {
+    padding : 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.botones button:first-child {
+    background-color: chartreuse;
+    cursor: pointer;
+}
+.botones button:nth-child(2) {
+    background-color: rgb(255 0 0 / 50%);
+    cursor: pointer;
+}
+
+#issueCantidad{
+    height: 1.5rem;
+    color: red;
+}
+#issue{
+    height: 1.5rem;
+    color: red;
+    font-size: 1rem;
+
+}
