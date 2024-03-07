@@ -17,7 +17,7 @@ function reservar(){
     if (nombreUsuario === "" || apellidoUsuario === "") {
         error.innerText = "Complete todos los campos, por favor.";
         verificador = true
-    }else if(!isNaN(nombreUsuario || !isNaN(apellidoUsuario) )){
+    }else if(!isNaN(nombreUsuario || !isNaN(apellidoUsuario))){
         error.innerText = "No ingrese numeros en estos campos"
         verificador = true
     }else{}
@@ -28,17 +28,28 @@ function reservar(){
     }
 
 
-    // convertir en tipo number
-    cantidadN = parseFloat(cantidadNinyos)
-    cantidadA = parseFloat(cantidadAdultos)
+
 
     //Para que el usuario no coloque numeros negativos como visitante
     let error2 = document.querySelector('#issueCantidad')
 
-    if(cantidadA <= 0 || NaN){
-        error2.innerText = "Porfavor Ingrese valores numericos o positivos"
+    if(cantidadAdultos <= 0){
+        error2.innerText = "Porfavor Ingrese numeros enteros"
+        verificador = true;
+    } else if (cantidadNinyos === "" || cantidadAdultos === ""){  //Segun yo, cuando se trata de verificar si un campo esta vacio o hay letras es mejor usar la declaracion del input cuando aun es texto, si utilizamos el valor ya transformado en number no funcionara, en el caso anterior funciono porque estabamos usando tambien
+        error2.innerText = "Rellene los campos"
+        verificador = true;
+    } else if(isNaN(cantidadAdultos) && isNaN(cantidadNinyos)){ //cantidadA != NaN
+        error2.innerText = "Solo agregue la cantidad (numeros) de visitantes"
+        verificador = true;
+    }else if(cantidadAdultos > 4 || cantidadNinyos > 3 ){
+        error2.innerText = "Capacidad maxima! (Adultos 4 y niños 3), porfavor reserve otra"
+        verificador = true;
+    }
+    if(verificador == true){
         return;
     }
+
 
 
 
